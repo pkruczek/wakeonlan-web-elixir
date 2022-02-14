@@ -20,7 +20,7 @@ defmodule Wol.MixProject do
   def application do
     [
       mod: {Wol.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :wakeonlan]
     ]
   end
 
@@ -45,7 +45,8 @@ defmodule Wol.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      {:wakeonlan, path: "../wakeonlan"}
     ]
   end
 

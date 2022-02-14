@@ -8,8 +8,7 @@ config :wol, WolWeb.Endpoint,
   server: false
 
 # In test we don't send emails.
-config :wol, Wol.Mailer,
-  adapter: Swoosh.Adapters.Test
+config :wol, Wol.Mailer, adapter: Swoosh.Adapters.Test
 
 # Print only warnings and errors during test
 config :logger, level: :warn
