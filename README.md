@@ -16,3 +16,9 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Docs: https://hexdocs.pm/phoenix
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
+
+## Helper
+Run tcpdump to test magic packets:
+```bash
+tcpdump -UlnXi eth0 ether proto 0x0842 or udp port 9 2>/dev/null | sed -nE 's/^.*20:  (ffff|.... ....) (..)(..) (..)(..) (..)(..).*$/\2:\3:\4:\5:\6:\7/p'
+```
