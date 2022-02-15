@@ -9,7 +9,7 @@
   </thead>
   <tbody>
     <tr>
-      <td>172.16.10.1</td>
+      <td><%= @machine_address %></td>
       <td><%= if @enabled do %><span class="computer-on">on</span><% else %><span class="computer-off">off</span><% end %></td>
       <td><a phx-click="start" class="computer-action">Start</a></td>
     </tr>

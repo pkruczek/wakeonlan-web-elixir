@@ -10,7 +10,7 @@ defmodule WolWeb.ComputerLive do
       subscribe_state_change(address)
     end
 
-    {:ok, assign(socket, :enabled, machine_enabled?(address))}
+    {:ok, assign(socket, enabled: machine_enabled?(address), machine_address: machine_address)}
   end
 
   @impl true
