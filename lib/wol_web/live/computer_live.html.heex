@@ -1,0 +1,17 @@
+<h1>Computer status</h1>
+<table>
+  <thead>
+    <tr>
+      <th>IP address</th>
+      <th>State</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>172.16.10.1</td>
+      <td><%= if @enabled do %><span class="computer-on">on</span><% else %><span class="computer-off">off</span><% end %></td>
+      <td><a phx-click="start" class="computer-action">Start</a></td>
+    </tr>
+  </tbody>
+</table>

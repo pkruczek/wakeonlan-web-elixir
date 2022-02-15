@@ -17,8 +17,8 @@ defmodule WolWeb.Router do
   scope "/", WolWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
-    live "/wol", ComputerLive
+    # get "/", PageController, :index
+    live "/", ComputerLive
   end
 
   # Other scopes may use custom stacks.

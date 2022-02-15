@@ -6,7 +6,6 @@ defmodule WolWeb.ComputerLive do
     address = machine_address()
 
     if connected?(socket) do
-      IO.puts("Mounting a live view in process #{inspect(self())}")
       register_pinger_server(address)
       subscribe_state_change(address)
     end
@@ -15,19 +14,10 @@ defmodule WolWeb.ComputerLive do
   end
 
   @impl true
-  def render(assigns) do
-    ~L"""
-    <h1>Computer status</h2>
-    enabled: <%= @enabled %>
-    <button phx-click="start">Start</button>
-    """
-  end
-
-  @impl true
   def handle_event("start", _, socket) do
-   machine_start_address()
-   |> start_machine()
-    
+    machine_start_address()
+    |> start_machine()
+
     {:noreply, socket}
   end
 
